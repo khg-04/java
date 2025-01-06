@@ -15,10 +15,10 @@ public class MethodTypeTest {
 		System.out.println("y1: " + y1);
 		System.out.println("y2: " + y2);
 		
-		type2(true);
+		type2(true); // 반환값이 없기 때문에 메서드 앞에 대입연산자(=) 없음
 		type2(false);
 		
-		boolean result = type3();
+		boolean result = type3(); // 매개변수가 없기 때문에 인자값 없음
 		System.out.println("result: " + result);
 		
 		type4();
