@@ -26,8 +26,8 @@ public class test02 {
 		
 		int age = year - birth;
 		
-		System.out.("%s님 안녕하세요.\n당신은 올해 만 %d세 입니다.", name, age);
+		System.out.printf("%s님 안녕하세요.\n당신은 올해 만 %d세 입니다.", name, age);
 		
-		sc. close();
+		sc.close();
 	}
 }
