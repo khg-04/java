@@ -16,7 +16,11 @@ public class test03 {
 		
 		result = ++num;
 		System.out.println("result :" + result);
+		
+		result = num--;
 		System.out.println("result :" + result);
+		
+		result = --num;
 		System.out.println("result :" + result);
 	}
 
