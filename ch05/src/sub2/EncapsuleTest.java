@@ -59,6 +59,73 @@ public class EncapsuleTest {
 		입금주: 김춘추
 		현재잔액: 15000
 		 */
+		
+		/*
+		 도서관 관리 시스템의 일부로 Book 클래스를 정의하세요 이 클래스는 다음 요구사항을 충족해야 합니다.
+		 
+		 <속성>
+		 - title(String): 책 제목
+		 - author(String): 저자 이름
+		 - isbn(String): ISBN 번호
+		 - availavleCopies(int): 이용 가능한 복사본 수
+		 
+		 <생성자>
+		 - 모든 인스턴스 변수를 초기화하는 생성자
+		 
+		 <메서드>
+		 borrowBook()
+		 - 이용 가능한 복사본이 있으면 availableCopies를 1 감소 시키고 true를 반환
+		 - 이용 가능한 복사본이 없으면 false를 반환
+		 
+		 returnBook()
+		 - availableCopies를 1 증가
+		 
+		 show()
+		 - 모든 멤버 변수 값을 출력
+		 */
+		Book book1 = new Book("삼국지", "나관중", "10001", 10);
+		book1.show();
+		
+		boolean isOk = book1.borrowBook();
+		
+		if(isOk) {
+			System.out.println("도서 대출 성공");
+		}else {
+			System.out.println("도서 대출 실패");
+		}
+		
+		book1.show();
+		
+		Book book2 = new Book("이것이 자바다", "신용권", "10002", 0);
+		book2.show();
+		
+		if(book2.borrowBook()) {
+			System.out.println(book2.getTitle() + "도서 대출 성공");
+		}else {
+			System.out.println(book2.getTitle() + "도서 대출 실패");
+		}
+		
+		/*
+		 Movie 클래스
+		 */
+		
+		Movie mo1 = new Movie("대충영화", "대충저자", 8.0, 10);
+		mo1.show();
+		
+		if(mo1.reserbeSeat()) {
+			System.out.println("예약 성공");
+		}else {
+			System.out.println("예약 실패");
+		}
+		mo1.show();
+		
+		Movie mo2 = new Movie("타이타닉", "제임스", 8.5, 0);
+		if(mo2.reserbeSeat()) {
+			System.out.println("예약 성공");
+		}else {
+			System.out.println("예약 실패");
+		}
+		mo2.show();
 	}
 
 }

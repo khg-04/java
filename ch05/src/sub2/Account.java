@@ -48,4 +48,5 @@ public class Account {
 	public void setBank(String bank) {
 		this.bank = bank;
 	}
+
 }
