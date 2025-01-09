@@ -1,4 +1,4 @@
-package sub4;
+package sub5;
 
 // Car 클래스 정의(설계)
 public class Car {
