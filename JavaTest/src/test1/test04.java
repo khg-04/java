@@ -18,7 +18,7 @@ public class test04 {
 		
 		System.out.println("입력한 정수는 " + score + "입니다.");
 		
-		if(score>=90) {
+		if(score>=90 && score <= 100) {
 			grade = 'A';
 		}else if(score>=80) {
 			grade = 'B';			

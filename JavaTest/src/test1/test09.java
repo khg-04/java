@@ -11,9 +11,9 @@ public class test09 {
 
         for (int i = 1; i <= 9; i++) {
             if (i <= 5) {
-                count = i;
+                count++;
             } else {
-                count = 10 - i;
+                count--;
             }
 
             for (int j = 1; j <= 5 - count; j++) {
