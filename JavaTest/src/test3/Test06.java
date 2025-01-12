@@ -11,7 +11,7 @@ class Adder {
 	public static Adder getInstance() {
 		return instance;
 	}
-	public Adder() {} //vs public static Adder() {}
+	public Adder() {}
 	
 	private Adder(int value) {
 		y += value;
@@ -27,10 +27,10 @@ class Adder {
 		this.x += arr[0];
 		this.y += arr[1];
 	}
-	public static void add(??? a2) {
+	public static void add(Adder a2) {
 		a2.x += 10;
 	}
-	public static Adder add(??? a3, ??? value) {
+	public static Adder add(Adder a3, int value) {
 		return new Adder(value);
 	}
 	public void show() {
@@ -41,7 +41,7 @@ class Adder {
 
 public class Test06 {
 	public static void main(String[] args) {
-		Adder a1 = Adder.???;
+		Adder a1 = Adder.getInstance();
 		
 		a1.add(1, 2);
 		a1.show();
