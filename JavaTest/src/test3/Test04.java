@@ -6,7 +6,7 @@ package test3;
  * 내용: 자바 클래스 연습문제
  */
 class Student {
-	static int studentId;
+	public static int studentId;
 	private String studentName;
 	private String major;
 	private int grade;

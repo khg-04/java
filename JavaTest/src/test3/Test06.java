@@ -11,7 +11,7 @@ class Adder {
 	public static Adder getInstance() {
 		return instance;
 	}
-	public Adder() {}
+	private Adder() {}
 	
 	private Adder(int value) {
 		y += value;
@@ -45,13 +45,16 @@ public class Test06 {
 		
 		a1.add(1, 2);
 		a1.show();
+		System.out.println("-------");
 		
 		int[] arr = {10, 20};
 		a1.add(arr);
 		a1.show();
+		System.out.println("-------");
 		
 		Adder.add(a1);
 		a1.show();
+		System.out.println("-------");
 		
 		a1 = Adder.add(a1, 3);
 		a1.show();
