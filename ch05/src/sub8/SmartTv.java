@@ -4,7 +4,7 @@ public class SmartTv extends Tv implements Computer {
 
 	@Override
 	public void boot() {
-		System.out.println("SmartTv bood");
+		System.out.println("SmartTv boot");
 		
 	}
 
@@ -12,6 +12,12 @@ public class SmartTv extends Tv implements Computer {
 	public void internet() {
 		System.out.println("SmartTv internet");
 		
+	}
+	
+	public void process() {
+		powerOn();
+		boot();
+		internet();
 	}
 
 }
