@@ -18,6 +18,8 @@ public class StringBuilderTest {
 		System.out.println("str : " + str);
 		System.out.println("str 주소 : " + System.identityHashCode(str));
 		
+		System.out.println("========================");
+		
 		// String의 불변성을 개선한 StringBuilder로 문자열 가공
 		StringBuilder sb = new StringBuilder("Hello");
 		System.out.println("sb : " + sb);
