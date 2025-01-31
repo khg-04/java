@@ -7,69 +7,41 @@ import db.DBHelper;
 import db.SQL;
 import entity.Product;
 
-public class ProductDAO extends DBHelper{
+public class ProductDAO extends DBHelper {
 	
-	// 싱글톤
 	private static final ProductDAO INSTANCE = new ProductDAO();
 	public static ProductDAO getInstance() {
 		return INSTANCE;
 	}
 	private ProductDAO() {}
 	
-	// 기본 CRUD
-	public void insertProduct(Product Product) {
+	public void insertProduct(Product product) {
 		
 		try {
-			
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.INSERT_PRODUCT);
-			psmt.setInt(1, Product.getProdNo());
-			psmt.setString(2, Product.getProdName());
-			psmt.setInt(3, Product.getStock());
-			psmt.setInt(4, Product.getPrice());
-			psmt.setString(5, Product.getCompany());
+			psmt.setString(1, product.getProdName());
+			psmt.setInt(2, product.getStock());
+			psmt.setInt(3, product.getPrice());
+			psmt.setString(4, product.getCompany());
 			psmt.executeUpdate();
 			closeAll();
-			
-		} catch (Exception e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public Product selectProduct(String prodName) {
-		
-		Product product = null;
-		
-		try {
-			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.SELECT_PRODUCT);
-			psmt.setString(1, prodName);
-			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
-				product = new Product();
-				product.setProdNo(rs.getInt(1));
-				product.setProdName(rs.getString(2));
-				product.setStock(rs.getInt(3));
-				product.setPrice(rs.getInt(4));
-				product.setCompany(rs.getString(5));
-			}
-			closeAll();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return product;
+	public Product selectProduct(int prodNo) {
+		return null;
 	}
-	
+
 	public List<Product> selectProducts() {
 		
 		List<Product> products = new ArrayList<Product>();
-		
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SQL.SELECT_PRODUCT_LIST);
+			rs = stmt.executeQuery(SQL.SELECT_PRODUCTS);
 			
 			while(rs.next()) {
 				Product product = new Product();
@@ -81,14 +53,22 @@ public class ProductDAO extends DBHelper{
 				products.add(product);
 			}
 			closeAll();
-		} catch (Exception e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		return products;
 	}
 	
-	public void updateProduct(Product product) {}
+	public void updateProduct(Product product) {
+		
+		try {
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
-	public void deleteProduct(String prodName) {}
-
+	public void deleteProduct(int prodNo) {
+		
+	}
 }

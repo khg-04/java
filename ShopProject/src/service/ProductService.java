@@ -28,8 +28,8 @@ public class ProductService {
 	}
 	
 	// 상품삭제
-	public void deleteProduct(String prodName) {
-		dao.deleteProduct(prodName);
+	public void deleteProduct(int prodNo) {
+		dao.deleteProduct(prodNo);
 	}
 	
 	// 상품수정

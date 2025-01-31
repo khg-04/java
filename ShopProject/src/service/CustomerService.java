@@ -30,13 +30,23 @@ public class CustomerService {
 	}
 	
 	// 회원탈퇴
-	public void removeCustomer(String custId) {
-		dao.deleteCustomer(custId);
+	public Customer removeCustomer(String custId) {
+	    Customer customer = dao.selectCustomer(custId); // 삭제 전 회원 조회
+
+	    if (customer != null) {
+	        dao.deleteCustomer(custId); // 삭제 실행
+	    }
+
+	    return customer; // 삭제된 회원 반환
 	}
-	
 	// 회원수정
 	public void modifyCustomer(Customer customer) {
 		dao.updateCustomer(customer);
+	}
+	
+	// 회원목록
+	public List<Customer> listCustomer() {
+		return dao.selectCustomers();
 	}
 
 }
